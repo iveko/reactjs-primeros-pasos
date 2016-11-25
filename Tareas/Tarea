@@ -1,0 +1,11 @@
+Tarea
+
+1.-Construya un arreglo de objetos javascript. Cada objeto corresponde a una persona con nombre, apellido, edad y ciudad.
+
+2.-Construya un componente que reciba como prop una persona y describa sus datos en forma narrativa (ej: "Juan Perez tiene 30 años de edad y vive en Santiago").
+
+3.-Construya un componente que reciba como prop una persona y construya una fila de una tabla html.
+
+4.-Construya un componente que tenga contenga en su estado el objeto de 1., y muestre dos listados: uno narrativo y una tabla html
+
+5.-Bonus track: póngale estilo (use css si sabe para que los listados se vean bien).
