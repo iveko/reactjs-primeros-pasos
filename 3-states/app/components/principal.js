@@ -1,12 +1,26 @@
-import React from 'react';
+﻿import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import 'react-widgets/lib/less/react-widgets.less';
+import DropdownList from 'react-widgets/lib/DropdownList';
 import {Saludo,Despedida, SaludosTotales} from './saludos'
+
+
+
 
 export default class ComponentePrincipal extends React.Component{
   constructor(props){
     super(props);
     this.state = {nombres: nombres};
   } 
+
+  componentWillMount(){
+    console.log('Before mount...');  
+  }
+
+  componentDidMount(){
+    console.log('After mount...')
+  }
 
   render1(){
     return <div>
@@ -18,10 +32,13 @@ export default class ComponentePrincipal extends React.Component{
 
   render(){
   	return (
-  		<div>
-  		{this.state.nombres.map((persona) => 
-  			<SaludosTotales nombre={persona.nombre} key={persona.id}/>)
-  		}
+    <div>	
+​     <DropdownList data = {this.state.nombres} textField = 'nombre'
+          onChange={value => this.setState({personaSeleccionada : value})} />
+  		{/*this.state.nombres.map((persona) => 
+  			<SaludosTotales vato = {persona} key={persona.id}/>)
+  		*/}
+      <SaludosTotales vato = {this.state.personaSeleccionada}/>
   	</div>)
   }
 }
