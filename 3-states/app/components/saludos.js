@@ -13,7 +13,9 @@ export class SaludosTotales extends React.Component{
 
     componentWillReceiveProps(nextProps){
     	console.log('props',this.props)
+    	console.log('nextProps', nextProps)
     	this.setState({persona : nextProps.vato})
+    	/*this.setState({persona : this.props.vato})*/
     }
 
 	render(){

@@ -1,9 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import 'react-widgets/lib/less/react-widgets.less';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import {Saludo,Despedida, SaludosTotales} from './saludos'
+import Entrada from './entrada'
 
 
 
@@ -35,10 +36,9 @@ export default class ComponentePrincipal extends React.Component{
     <div>	
 ​     <DropdownList data = {this.state.nombres} textField = 'nombre'
           onChange={value => this.setState({personaSeleccionada : value})} />
-  		{/*this.state.nombres.map((persona) => 
-  			<SaludosTotales vato = {persona} key={persona.id}/>)
-  		*/}
       <SaludosTotales vato = {this.state.personaSeleccionada}/>
+      
+      <Entrada crearNombre= { persona => this.setState({nombres : [...this.state.nombres, persona]})}/>
   	</div>)
   }
 }
@@ -46,3 +46,4 @@ export default class ComponentePrincipal extends React.Component{
 const nombres = [
 {id:1, nombre : "Juan", apellido : "Pérez"},
 {id:2, nombre : "Pedro", apellido : "González" }]
+
